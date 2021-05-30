@@ -1,0 +1,12 @@
+en:
+  PLUGIN_NEXTCLOUD:
+    BACKUPS_MAX_COUNT: Maximum number of backups
+    BACKUPS_MAX_SPACE: Maximum storage space
+    BACKUPS_MAX_RETENTION_TIME: Maximum retention time
+    BACKUPS_MAX_RETENTION_TIME_APPEND: days
+    FOLDER: Remote storage folder
+    NONE: None
+    PASSWORD: Password
+    PURGE_TRIGGER: Purge trigger
+    USERNAME: Username
+    WEBDAV_URL: WebDAV URL

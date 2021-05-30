@@ -1,0 +1,99 @@
+name: Nextcloud
+slug: nextcloud
+type: plugin
+version: 0.1.0
+description: Upload your backups to Nextcloud
+icon: cloud-upload
+author:
+  name: Thomas Vantuycom
+  email: thomasvantuycom@protonmail.com
+homepage: https://github.com/TheDancingCode/grav-plugin-nextcloud
+keywords: grav, plugin, nextcloud, backup
+bugs: https://github.com/TheDancingCode/grav-plugin-nextcloud/issues
+docs: https://github.com/TheDancingCode/grav-plugin-nextcloud/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.7.0' }
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: PLUGIN_ADMIN.PLUGIN_STATUS
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
+    webdav_url:
+      type: url
+      label: PLUGIN_NEXTCLOUD.WEBDAV_URL
+      validate:
+        required: true
+
+    username:
+      type: text
+      label: PLUGIN_NEXTCLOUD.USERNAME
+      size: medium
+      validate:
+        required: true
+
+    password:
+      type: password
+      label: PLUGIN_NEXTCLOUD.PASSWORD
+      size: medium
+      validate:
+        required: true
+
+    folder:
+      type: text
+      label: PLUGIN_NEXTCLOUD.FOLDER
+      default: /grav-plugin-nextcloud
+      size: medium
+      validate:
+        required: true
+
+    purge.trigger:
+      type: select
+      label: PLUGIN_NEXTCLOUD.PURGE_TRIGGER
+      size: medium
+      default: space
+      options:
+        none: PLUGIN_NEXTCLOUD.NONE
+        number: PLUGIN_NEXTCLOUD.BACKUPS_MAX_COUNT
+        space: PLUGIN_NEXTCLOUD.BACKUPS_MAX_SPACE
+        time: PLUGIN_NEXTCLOUD.BACKUPS_MAX_RETENTION_TIME
+
+    purge.max_backups_count:
+      type: number
+      label: PLUGIN_NEXTCLOUD.BACKUPS_MAX_COUNT
+      default: 25
+      size: x-small
+      validate:
+        min: 1
+        type: number
+
+    purge.max_backups_space:
+      type: number
+      label: PLUGIN_NEXTCLOUD.BACKUPS_MAX_SPACE
+      append: GB
+      size: x-small
+      default: 5
+      validate:
+        min: 1
+        type: number
+
+    purge.max_backups_time:
+      type: number
+      label: PLUGIN_NEXTCLOUD.BACKUPS_MAX_RETENTION_TIME
+      append: PLUGIN_NEXTCLOUD.BACKUPS_MAX_RETENTION_TIME_APPEND
+      size: x-small
+      default: 365
+      validate:
+        min: 1
+        type: number

@@ -1,0 +1,10 @@
+enabled: true
+webdav_url:
+username:
+password:
+folder: /grav-plugin-nextcloud
+purge:
+    trigger: space
+    max_backups_count: 25
+    max_backups_space: 5
+    max_backups_time: 365
