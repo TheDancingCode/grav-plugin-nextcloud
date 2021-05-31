@@ -1,6 +1,6 @@
 # Nextcloud Plugin
 
-The **Nextcloud** Plugin is an extension for [Grav CMS](http://github.com/getgrav/grav). Store your backups in Nextcloud
+The **Nextcloud** Plugin is an extension for [Grav CMS](http://github.com/getgrav/grav). Upload your backups to Nextcloud.
 
 ## Installation
 
