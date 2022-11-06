@@ -20,7 +20,6 @@ class NextcloudPlugin extends Plugin
     {
         return [
             'onBackupFinished' => ['onBackupFinished', 0],
-            'onPluginsInitialized' => ['purge', 0]
         ];
     }
 
